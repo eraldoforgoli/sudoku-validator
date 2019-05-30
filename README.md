@@ -5,15 +5,23 @@ The goal of Sudoku is to fill in a 9×9 grid with digits so that each column, ro
 
 
 ### Directory Structure
-```├── README.md
+```
+├── README.md
 ├── src
-│   └── com
-│       └── eraldo
-│           ├── Main.java
-│           ├── SudokuController.java
-│           ├── Util.java
-│           └── View.java
-└── Sudoku-Validator.iml
+│   ├── main
+│   │   └── java
+│   │       └── com
+│   │           └── eraldo
+│   │               ├── IntegerParseException.java
+│   │               ├── Main.java
+│   │               ├── SudokuController.java
+│   │               ├── Util.java
+│   │               └── View.java
+│   └── test
+│       └── java
+│           └── com
+│               └── eraldo
+│                   └── SudokuControllerTest.java
 
 ```
 
