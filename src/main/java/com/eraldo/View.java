@@ -3,6 +3,7 @@ package com.eraldo;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import com.eraldo.SudokuController;
+import com.eraldo.IntegerParseException;
 import java.awt.*;
 
 public class View extends JFrame {
