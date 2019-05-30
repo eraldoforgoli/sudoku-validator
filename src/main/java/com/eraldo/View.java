@@ -2,13 +2,13 @@ package com.eraldo;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumnModel;
+import com.eraldo.SudokuController;
 import java.awt.*;
 
 public class View extends JFrame {
     private JTable table;
     private JButton button;
+    private SudokuController sudokuController = new SudokuController();
 
     public View(){
 
@@ -24,7 +24,7 @@ public class View extends JFrame {
         table = new JTable(9,9);
         table.setBounds(50, 60, 300, 300);
         table.setTableHeader(null);
-        table.setRowHeight(42);
+        table.setRowHeight(44);
         table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
         JScrollPane scrollPane = new JScrollPane(table);
 
@@ -37,10 +37,10 @@ public class View extends JFrame {
         button.addActionListener(event -> {
             int[][] tableData = getDataFromJtable();
             if(tableData != null) {
-                boolean rowsContain1To9 = SudokuController.allRowsContain1To9(tableData);
-                boolean columnsContain1to9 = SudokuController.allColumnsContain1To9(tableData);
-                boolean gridsContain1to9 = SudokuController.allGridsContain1to9(tableData);
-                JOptionPane.showMessageDialog(null, (rowsContain1To9 && columnsContain1to9 && gridsContain1to9) ? "valid solution!" : "Incorrect Solution");
+                boolean rowsContain1To9 = sudokuController.allRowsContain1To9(tableData);
+                boolean columnsContain1to9 = sudokuController.allColumnsContain1To9(tableData);
+                boolean gridsContain1to9 = sudokuController.allGridsContain1to9(tableData);
+                JOptionPane.showMessageDialog(null, (rowsContain1To9 && columnsContain1to9 && gridsContain1to9) ? "CORRECT!" : "INCORRECT!");
             }
         });
     }
@@ -61,8 +61,8 @@ public class View extends JFrame {
         int nrOfRows = tableModel.getRowCount();
         int nrOfCols = tableModel.getColumnCount();
         int[][] tableData = new int[nrOfRows][nrOfCols];
-        for (int i = 0 ; i < nrOfRows ; i++)
-            for (int j = 0 ; j < nrOfCols ; j++ ){
+        for (int i = 0; i < nrOfRows; i++)
+            for (int j = 0; j < nrOfCols; j++){
                 try {
                     tableData[i][j] = Integer.parseInt((String) tableModel.getValueAt(i, j));
                 } catch(Exception ex){

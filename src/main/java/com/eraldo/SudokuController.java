@@ -1,9 +1,10 @@
 package com.eraldo;
 
 import java.util.Map;
+import com.eraldo.Util;
 
 public class SudokuController {
-    public static  boolean allRowsContain1To9(int[][] sudoku2DArray){
+    public  boolean allRowsContain1To9(int[][] sudoku2DArray){
         for(int i = 0; i < sudoku2DArray.length; i++){
             Map<Integer, Boolean> defaultNumbers = Util.getDefault1To9Map();
             for(int j = 0; j < sudoku2DArray.length; j++){
@@ -16,7 +17,7 @@ public class SudokuController {
         return true;
     }
 
-    public static boolean allColumnsContain1To9(int[][] sudoku2DArray){
+    public boolean allColumnsContain1To9(int[][] sudoku2DArray){
         for(int i = 0; i < sudoku2DArray.length; i++){
             Map<Integer, Boolean> defaultNumbers = Util.getDefault1To9Map();
             for(int j = 0; j < sudoku2DArray.length; j++){
@@ -29,8 +30,7 @@ public class SudokuController {
         return true;
     }
 
-
-    public static boolean allGridsContain1to9(int[][] sudoku2DArray){
+    public boolean allGridsContain1to9(int[][] sudoku2DArray){
         for(int gridNr = 0; gridNr < 9; gridNr++){
             Map<Integer, Boolean> defaultNumbers = Util.getDefault1To9Map();
             for(int gridRow = 0; gridRow < 3; gridRow++){
@@ -47,13 +47,11 @@ public class SudokuController {
         return true;
     }
 
-
-
-    private static  boolean isDublicateNumber(Map<Integer, Boolean> numbers, int number){
+    private boolean isDublicateNumber(Map<Integer, Boolean> numbers, int number){
         return numbers.get(number) == true;
     }
 
-    private static void setNumberStatusToFound(Map<Integer, Boolean> numbers, int number){
+    private void setNumberStatusToFound(Map<Integer, Boolean> numbers, int number){
         numbers.put(number,  true);
     }
 }
