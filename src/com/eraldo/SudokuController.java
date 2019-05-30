@@ -3,7 +3,7 @@ package com.eraldo;
 import java.util.Map;
 
 public class SudokuController {
-    public static  boolean rowsContain1To9(int[][] sudoku2DArray){
+    public static  boolean allRowsContain1To9(int[][] sudoku2DArray){
         for(int i = 0; i < sudoku2DArray.length; i++){
             Map<Integer, Boolean> defaultNumbers = Util.getDefault1To9Map();
             for(int j = 0; j < sudoku2DArray.length; j++){
@@ -16,7 +16,7 @@ public class SudokuController {
         return true;
     }
 
-    public static boolean columnsContain1To9(int[][] sudoku2DArray){
+    public static boolean allColumnsContain1To9(int[][] sudoku2DArray){
         for(int i = 0; i < sudoku2DArray.length; i++){
             Map<Integer, Boolean> defaultNumbers = Util.getDefault1To9Map();
             for(int j = 0; j < sudoku2DArray.length; j++){
@@ -30,20 +30,18 @@ public class SudokuController {
     }
 
 
-    public static boolean gridsContain1to9(int[][] sudoku2DArray){
+    public static boolean allGridsContain1to9(int[][] sudoku2DArray){
         for(int gridNr = 0; gridNr < 9; gridNr++){
             Map<Integer, Boolean> defaultNumbers = Util.getDefault1To9Map();
             for(int gridRow = 0; gridRow < 3; gridRow++){
                 for(int gridCol = 0; gridCol < 3; gridCol++){
                     int row = (gridNr/3)*3 + gridRow;
                     int col = (gridNr%3)*3 + gridCol;
-                    System.out.print(sudoku2DArray[row][col] + " ");
                     if(isDublicateNumber(defaultNumbers, sudoku2DArray[row][col]))
                         return false;
                     else
                         setNumberStatusToFound(defaultNumbers, sudoku2DArray[row][col]);
                 }
-                System.out.println();
             }
         }
         return true;
