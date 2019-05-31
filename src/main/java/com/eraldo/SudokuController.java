@@ -1,7 +1,6 @@
 package com.eraldo;
 
 import java.util.Map;
-import com.eraldo.Util;
 
 public class SudokuController {
     public  boolean allRowsContain1To9(int[][] sudoku2DArray){
