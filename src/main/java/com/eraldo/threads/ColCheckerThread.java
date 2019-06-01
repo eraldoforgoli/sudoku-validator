@@ -10,7 +10,7 @@ public class ColCheckerThread implements Runnable {
 
     public ColCheckerThread(String threadName, int[][] sudokuData) {
         this.sudokuData = sudokuData;
-        threadName = threadName;
+        this.threadName = threadName;
     }
 
     @Override

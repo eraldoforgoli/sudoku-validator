@@ -10,7 +10,7 @@ public class GridsCheckerThread implements Runnable {
 
     public GridsCheckerThread(String threadName, int[][] sudokuData) {
         this.sudokuData = sudokuData;
-        threadName = threadName;
+        this.threadName = threadName;
     }
 
     @Override
