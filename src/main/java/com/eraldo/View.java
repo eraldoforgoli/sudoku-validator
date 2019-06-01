@@ -9,21 +9,21 @@ import java.awt.*;
 
 public class View extends JFrame {
     private JTable table;
-    private JButton button;
+    private JButton validateButton;
     private ThreadController threadManager;
 
     public View() {
 
         table = new JTable(9, 9);
-        button = new JButton();
+        validateButton = new JButton();
         threadManager = new ThreadController();
 
         setWindowProperties();
         centerWindow();
         setTableProperties();
         addScrollPane();
-        addButton();
-        addButtonActionListener();
+        addValidateButton();
+        addValidateButtonActionListener();
     }
 
     private void setWindowProperties() {
@@ -51,13 +51,13 @@ public class View extends JFrame {
         add(scrollPane);
     }
 
-    private void addButton() {
-        button.setText("Validate Solution");
-        add(button);
+    private void addValidateButton() {
+        validateButton.setText("Validate Solution");
+        add(validateButton);
     }
 
-    private void addButtonActionListener() {
-        button.addActionListener(event -> {
+    private void addValidateButtonActionListener() {
+        validateButton.addActionListener(event -> {
             int[][] tableData = getDataFromJtable();
             if (tableData != null) {
                 boolean result = threadManager.getResultFromSuokuData(tableData);
