@@ -14,30 +14,49 @@ public class View extends JFrame {
 
     public View() {
 
+        table = new JTable(9, 9);
+        button = new JButton();
+        threadManager = new ThreadController();
+
+        setWindowProperties();
+        centerWindow();
+        setTableProperties();
+        addScrollPane();
+        addButton();
+        addButtonActionListener();
+    }
+
+    private void setWindowProperties() {
         setTitle("Sudoku Validator");
         setLayout(new FlowLayout());
         setSize(500, 500);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 
+    private void centerWindow() {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
-        table = new JTable(9, 9);
+    }
+
+    private void setTableProperties() {
         table.setBounds(50, 60, 300, 300);
         table.setTableHeader(null);
         table.setRowHeight(44);
         table.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
+    }
+
+    private void addScrollPane() {
         JScrollPane scrollPane = new JScrollPane(table);
-
-        button = new JButton();
-        button.setText("Validate Solution");
-
         add(scrollPane);
+    }
+
+    private void addButton() {
+        button.setText("Validate Solution");
         add(button);
+    }
 
-
-        threadManager = new ThreadController();
-
+    private void addButtonActionListener() {
         button.addActionListener(event -> {
             int[][] tableData = getDataFromJtable();
             if (tableData != null) {

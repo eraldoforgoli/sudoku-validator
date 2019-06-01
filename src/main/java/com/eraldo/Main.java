@@ -1,8 +1,10 @@
 import javax.swing.*;
 
+import com.eraldo.View;
+
 public class Main {
     public static void main(String[] args) {
-        com.eraldo.View view = new com.eraldo.View();
+        View view = new View();
         view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         view.setSize(500, 500);
         view.setVisible(true);
