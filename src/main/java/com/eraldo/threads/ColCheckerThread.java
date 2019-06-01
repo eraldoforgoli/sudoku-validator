@@ -2,7 +2,6 @@ package com.eraldo.threads;
 
 import com.eraldo.Util;
 
-
 public class ColCheckerThread implements Runnable {
     private volatile boolean result;
     private String threadName;

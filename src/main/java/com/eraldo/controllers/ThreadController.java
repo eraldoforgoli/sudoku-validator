@@ -4,7 +4,6 @@ import com.eraldo.threads.ColCheckerThread;
 import com.eraldo.threads.RowCheckerThread;
 import com.eraldo.threads.GridsCheckerThread;
 
-
 public class ThreadController {
     public boolean getResultFromSuokuData(int[][] sudokuData) {
         boolean rowResult = getResultFromRows(sudokuData);
