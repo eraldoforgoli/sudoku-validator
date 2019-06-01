@@ -12,17 +12,23 @@ The goal of Sudoku is to fill in a 9×9 grid with digits so that each column, ro
 │   │   └── java
 │   │       └── com
 │   │           └── eraldo
-│   │               ├── IntegerParseException.java
+│   │               ├── controllers
+│   │               │   └── ThreadController.java
+│   │               ├── exceptions
+│   │               │   └── IntegerParseException.java
 │   │               ├── Main.java
-│   │               ├── SudokuController.java
+│   │               ├── threads
+│   │               │   ├── ColCheckerThread.java
+│   │               │   ├── GridsCheckerThread.java
+│   │               │   └── RowCheckerThread.java
 │   │               ├── Util.java
 │   │               └── View.java
 │   └── test
 │       └── java
 │           └── com
 │               └── eraldo
-│                   ├── SudokuControllerTestInt.java
-│                   └── SudokuControllerTest.java
+│                   ├── UtilTestInt.java
+│                   └── UtilTest.java
 
 
 ```
