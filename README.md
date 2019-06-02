@@ -34,7 +34,7 @@ The goal of Sudoku is to fill in a 9×9 grid with digits so that each column, ro
 ```
 
 ### Sequence Diagram
-![Sequence Diagram](/docs/Validate\ Sudoku.png?raw=true "Sequence Diagram")
+![Sequence Diagram](https://raw.githubusercontent.com/eraldoforgoli/sudoku-validator/master/docs/Validate%20Sudoku.png)
 
 ### Screenshots
 
