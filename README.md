@@ -33,6 +33,9 @@ The goal of Sudoku is to fill in a 9×9 grid with digits so that each column, ro
 
 ```
 
+### Sequence Diagram
+![Sequence Diagram](/docs/Validate\ Sudoku.png?raw=true "Sequence Diagram")
+
 ### Screenshots
 
 ![Input](http://i63.tinypic.com/zjtgs2.png)  
