@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Util {
+    private static final int NR_OF_GRIDS = 9;
+    private static final int NR_OF_ROWS_PER_GRID= 3;
+    private static final int NR_OF_COLS_PER_GRID = 3;
+    private static final int SUDOKU_VALID_NUMBERS = 9;
 
     public static boolean allRowsContain1To9(int[][] sudoku2DArray) {
         for (int i = 0; i < sudoku2DArray.length; i++) {
@@ -32,12 +36,12 @@ public class Util {
     }
 
     public static boolean all3X3GridsContain1to9(int[][] sudoku2DArray) {
-        for (int gridNr = 0; gridNr < 9; gridNr++) {
+        for (int gridNr = 0; gridNr < NR_OF_GRIDS; gridNr++) {
             Map<Integer, Boolean> defaultNumbers = Util.getDefault1To9Map();
-            for (int gridRow = 0; gridRow < 3; gridRow++) {
-                for (int gridCol = 0; gridCol < 3; gridCol++) {
-                    int row = (gridNr / 3) * 3 + gridRow;
-                    int col = (gridNr % 3) * 3 + gridCol;
+            for (int gridRow = 0; gridRow < NR_OF_ROWS_PER_GRID; gridRow++) {
+                for (int gridCol = 0; gridCol < NR_OF_COLS_PER_GRID; gridCol++) {
+                    int row = (gridNr / NR_OF_COLS_PER_GRID) * NR_OF_ROWS_PER_GRID + gridRow;
+                    int col = (gridNr % NR_OF_ROWS_PER_GRID) * NR_OF_COLS_PER_GRID + gridCol;
                     if (isDublicateNumber(defaultNumbers, sudoku2DArray[row][col]))
                         return false;
                     else
@@ -58,7 +62,7 @@ public class Util {
 
     public static Map getDefault1To9Map() {
         Map<Integer, Boolean> defaultNumbers = new HashMap<Integer, Boolean>();
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < SUDOKU_VALID_NUMBERS; i++) {
             defaultNumbers.put(i + 1, false);
         }
         return defaultNumbers;

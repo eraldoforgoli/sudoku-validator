@@ -13,17 +13,27 @@ public class View extends JFrame {
     private ThreadController threadManager;
 
     public View() {
-
-        table = new JTable(9, 9);
-        validateButton = new JButton();
-        threadManager = new ThreadController();
-
+        createTable();
+        createValidateButton();
+        createThreadManager();
         setWindowProperties();
         centerWindow();
         setTableProperties();
         addScrollPane();
         addValidateButton();
         addValidateButtonActionListener();
+    }
+
+    private void createTable() {
+        table = new JTable(9, 9);
+    }
+
+    private void createValidateButton() {
+        validateButton = new JButton();
+    }
+
+    private void createThreadManager() {
+        threadManager = new ThreadController();
     }
 
     private void setWindowProperties() {
