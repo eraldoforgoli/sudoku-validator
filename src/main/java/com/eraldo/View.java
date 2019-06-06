@@ -13,7 +13,6 @@ public class View extends JFrame {
     private ThreadController threadManager;
 
     public View() {
-
         table = new JTable(9, 9);
         validateButton = new JButton();
         threadManager = new ThreadController();
