@@ -5,6 +5,10 @@ steps:
     - "contaboagent=true"
   - label: 'Deploy Sonar'
     command: "mvn clean package sonar:sonar"
+    agents:
+      - "contaboagent=true"
 
   - label: "Sonar Analysis"
     command: 'scripts/sonarqube.sh'
+    agents:
+      - "contaboagent=true"
