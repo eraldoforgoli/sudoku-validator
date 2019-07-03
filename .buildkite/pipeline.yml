@@ -3,7 +3,7 @@ steps:
     command: "mvn clean test"
     agents:
     - "contaboagent=true"
-  -label: 'Deploy Sonar'
+  - label: 'Deploy Sonar'
     command: "mvn clean deploy sonar:sonar"
 
   - label: "Sonar Analysis"
