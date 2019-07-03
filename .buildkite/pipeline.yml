@@ -2,7 +2,9 @@ steps:
   - label: 'Tests'
     command: "mvn clean test"
     agents:
-    - "contaboagent=true"
+      - "contaboagent=true"
+
+  - wait
 
   - label: "Sonar Analysis"
     command: 'scripts/sonarqube.sh'
