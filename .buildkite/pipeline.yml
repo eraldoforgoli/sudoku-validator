@@ -4,5 +4,5 @@ steps:
     agents:
     - "contaboagent=true"
 
-  - label: "Print something"
-    command: echo "Hello There!"
+  - label: "Sonar Analysis"
+    command: '/scripts/sonarqube.sh'
