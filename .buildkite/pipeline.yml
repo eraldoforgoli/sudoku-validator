@@ -1,0 +1,4 @@
+steps:
+  - command: "mvn clean test"
+    agents:
+      - "contaboagent=true"
