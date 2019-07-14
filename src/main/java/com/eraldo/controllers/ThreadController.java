@@ -1,8 +1,8 @@
 package controllers;
 
 import com.eraldo.threads.ColCheckerThread;
-import com.eraldo.threads.RowCheckerThread;
 import com.eraldo.threads.GridsCheckerThread;
+import com.eraldo.threads.RowCheckerThread;
 
 public class ThreadController {
     public boolean getResultFromSuokuData(int[][] sudokuData) {

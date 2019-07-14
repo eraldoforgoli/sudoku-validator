@@ -6,7 +6,7 @@ steps:
 
   - wait
 
-  - block: ":rocket: Analyse!"
+  - block: ":rocket: click to Analyse!"
 
   - label: "Sonar Analysis"
     command: 'scripts/sonarqube.sh'

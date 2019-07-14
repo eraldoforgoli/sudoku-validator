@@ -1,6 +1,6 @@
-import javax.swing.*;
-
 import com.eraldo.View;
+
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {

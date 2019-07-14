@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Util {
     private static final int NR_OF_GRIDS = 9;
-    private static final int NR_OF_ROWS_PER_GRID= 3;
+    private static final int NR_OF_ROWS_PER_GRID = 3;
     private static final int NR_OF_COLS_PER_GRID = 3;
     private static final int SUDOKU_VALID_NUMBERS = 9;
 
