@@ -1,4 +1,4 @@
-package com.eraldo.threads;
+package com.eraldo.thread;
 
 import com.eraldo.Util;
 

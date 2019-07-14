@@ -1,21 +1,21 @@
-package com.eraldo.threads;
+package com.eraldo.thread;
 
 import com.eraldo.Util;
 
-public class ColCheckerThread implements Runnable {
+public class RowCheckerThread implements Runnable {
     private volatile boolean result;
     private String threadName;
-    private ColCheckerThread thread;
+    private RowCheckerThread thread;
     private int[][] sudokuData;
 
-    public ColCheckerThread(String threadName, int[][] sudokuData) {
+    public RowCheckerThread(String threadName, int[][] sudokuData) {
         this.sudokuData = sudokuData;
         this.threadName = threadName;
     }
 
     @Override
     public void run() {
-        result = Util.allColumnsContain1To9(sudokuData);
+        result = Util.allRowsContain1To9(sudokuData);
     }
 
     public boolean getThreadValue() {
